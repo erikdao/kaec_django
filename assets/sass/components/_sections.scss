@@ -1,0 +1,236 @@
+/**
+ * Styles for page sections
+ *
+ * ========================================== */
+//  Homepage
+@mixin moving-boxes-before() {
+    content: '';
+    background: rgba(93, 169, 30, 0.6);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    @include transition(0.7s);
+    @include transform(translate(0, -100%));
+}
+
+@mixin moving-boxes-col() {
+    height: 222px;
+    background-size: 100%;
+    color: $white;
+    text-transform: uppercase;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+
+@mixin moving-boxes-col-link() {
+    color: $white;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 3;
+}
+
+section {
+    &.moving {
+        margin-top: 75px;
+        position: relative;
+        padding-bottom: 370px;
+
+        &:before {
+            content: '';
+            background: url('/static/imgs/moving-before.png') bottom center no-repeat;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 536px;
+            background-size: cover;
+        }
+
+        h1 {
+            margin-bottom: 44px;
+        }
+
+        p {
+            font-size: 30px;
+            padding: 0 0 30px;
+            position: relative;
+            margin-bottom: 40px;
+
+            &:before {
+                content: '';
+                width: 30px;
+                height: 3px;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                background: $grey;
+            }
+        }
+
+        .moving-boxes [class^="col-"] {
+            padding: 0;
+        }
+
+        .explore {
+            height: 222px;
+            background-size: 100%;
+            overflow: hidden;
+            text-transform: uppercase;
+            position: relative;
+            margin-bottom: 50px;
+
+            &:before {
+                @include moving-boxes-before();
+            }
+
+            &:hover {
+                &:before {
+                    opacity: 1;
+                    @include transform(translate(0, 0));
+                }
+            }
+
+            a {
+                @include moving-boxes-col-link();
+            }
+        } /* -- .moving-boxes .explore */
+
+        .hom-three-box-txt {
+            position: absolute;
+            left: 0;
+            text-align: left;
+            padding: 0 0 10px 40px;
+            bottom: 0;
+
+            .pointer {
+                font-size: 40px;
+                @include default-transition();
+                @include transform(translate(0, 0));
+                color: $grey;
+            }
+
+            h2 {
+                font-size: 30px;
+                font-weight: bold;
+                margin: 0;
+                @include transition(0.6s);
+                @include transform(translate(0, 0));
+                @include transform(scale(1));
+            }
+
+            .video-icon {
+                font-size: 35px;
+                border-radius: 50% 50%;
+                background: rgba(255, 255, 255, .55);
+                width: 50px;
+                height: 50px;
+                position: relative;
+                top: -20px;
+                left: 5px;
+                margin: auto;
+                @include default-transition();
+                @include transform(translate(0, 0));
+
+                i {
+                    margin: auto;
+                    display: block;
+                    float: none;
+                    line-height: 70px;
+                    color: #555;
+                    width: 28px;
+                    height: 50px;
+                }
+            }
+        }
+
+        .intro {
+            @include moving-boxes-col();
+
+            &:before {
+                @include moving-boxes-before();
+            }
+
+            &:hover {
+                &:before {
+                    opacity: 1;
+                    @include transform(translate(0, 0));
+                }
+            }
+
+            a {
+                @include moving-boxes-col-link();
+            }
+        } /* -- moving-boxes .intro */
+
+        .visit {
+            @include moving-boxes-col();
+
+            &:before {
+                @include moving-boxes-before();
+            }
+
+            &:hover {
+                &:before {
+                    opacity: 1;
+                    @include transform(translate(0, 0));
+                }
+            }
+
+            a {
+                @include moving-boxes-col-link();
+            }
+        } /* -- .moving-boxes .visit */
+    }
+}
+
+@media (min-width: 1200px) {
+    section {
+        &.moving {
+            .hom-three-box-txt {
+                width: 238px;
+            }
+
+            .explore {
+                &:hover {
+                    .pointer {
+                        @include transform(translate(0, -150px));
+                    }
+
+                    h2 {
+                        @include transform(scale(1.1) translate(0px, -90px));
+                        color: $white;
+                    }
+                }
+            }
+
+            .intro {
+                &:hover {
+                    .video-icon {
+                        @include transform(translate(0, -150px));
+                    }
+
+                    h2 {
+                        @include transform(scale(1.1) translate(0px, -90px));
+                        color: $white;
+                    }
+                }
+            }
+
+            .visit {
+                &:hover {
+                    h2 {
+                        @include transform(scale(1.1) translate(0px, -90px));
+                    }
+                }
+            }
+        }
+    }
+}

@@ -35,3 +35,126 @@
      color: $grey;
      background: $white;
  }
+
+ h1 {
+     font-size: 60px;
+     font-weight: normal;
+     font-family: $base-light-font-family;
+     margin-top: 0;
+ }
+
+ p {
+     margin: 0 0 10px;
+ }
+
+/* Down pointer arrows */
+.donw-pointer {
+    font-size: 26px;
+    color: $grey;
+    padding: 4px 5px;
+
+    &:hover {
+        background: $accent-primary;
+        color: $white;
+    }
+
+    &:hover, &:active, &:focus, &:visited {
+        text-decoration: none;
+    }
+
+    i {
+        position: relative;
+        top: 6px;
+    }
+}
+
+ /* Scroll Down arrows */
+ @media (min-width: 1200px) {
+    .scroll-to {
+        font-size: 26px;
+        color: $grey;
+        padding: 4px 5px;
+        position: relative;
+        text-align: center;
+        overflow: hidden;
+        display: inline-block;
+
+        &:hover {
+            color: $white;
+            background: none;
+            text-decoration: none;
+
+            &:after {
+                @include transform(scale(1));
+            }
+        }
+
+        &:hover, &:active, &:focus, &:visited {
+            text-decoration: none;
+        }
+        
+        &:after {
+            content: '';
+            position: absolute;
+            right: -11px;
+            top: -10px;
+            background: $accent-primary;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin: 0 auto;
+            @include transform(scale(0));
+            @include transition(all 0.8s ease-in-out);
+        }
+
+        i {
+            position: relative;
+            top: 6px;
+            z-index: 1;
+        }
+     }
+
+     .donw-pointer {
+         &.scroll-to {
+            font-size: 26px;
+            color: $grey;
+            padding: 4px 5px;
+            position: relative;
+            text-align: center;
+            overflow: hidden;
+            display: inline-block;
+
+            &:hover {
+                color: $white;
+                background: none;
+
+                &:after {
+                    @include transform(scale(1));
+                }
+            }
+
+            &:hover, &:active, &:focus, &:visited {
+                text-decoration: none;
+            }
+
+            &:after {
+                content: '';
+                position: absolute;
+                right: -12px;
+                top: -7px;
+                background: $accent-primary;
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                margin: 0 auto;
+                @include transform(scale(0));
+                @include transition(0.8s);
+            }
+
+            i {
+                position: relative;
+                z-index: 1;
+            }
+         }
+     }
+ }
