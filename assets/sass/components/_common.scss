@@ -1,0 +1,37 @@
+/**
+ * Universal styles for common elements
+ * ===================================================== */
+ a {
+     color: $accent-primary;
+     text-decoration: none;
+     @include default-transition();
+     background: transparent;
+
+     &:hover {
+         color: darken($accent-primary, 20%);
+         text-decoration: underline;
+         outline: none;
+     }
+ }
+
+ nav {
+     margin-bottom: 0;
+     padding-left: 0;
+     list-style: none;
+
+     &:before, &:after {
+         content: " ";
+         display: table;
+     }
+
+     &:after {
+         clear: both;
+     }
+ }
+
+ body {
+     font-family: $base-font-family;
+     font-size: $default-font-size;
+     color: $grey;
+     background: $white;
+ }

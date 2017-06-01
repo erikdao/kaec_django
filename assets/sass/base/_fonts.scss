@@ -1,0 +1,27 @@
+/* Fonts */
+@font-face {
+    font-family: "DIN Next LT Pro Light";
+    src: url("/static/fonts/DINNextLTPro-Light.eot");
+    src: url("/static/fonts/DINNextLTPro-Light.eot#iefix") format("embedded-opentype"), url("/static/fonts/DINNextLTPro-Light.woff") format("woff"), url("/static/fonts/DINNextLTPro-Light.tff") format("truetype"), url("/static/fonts/DINNextLTPro-Light.svg#a25104a0774d16e06886a3b435b5d53e") format("svg");
+    font-style: normal;
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: "DIN Next LT Pro";
+    src: url("/static/fonts/DINNextLTPro-Regular.eot");
+    src: url("/static/fonts/DINNextLTPro-Regular.eot#iefix") format("embedded-opentype"), url("/static/fonts/DINNextLTPro-Regular.woff") format("woff"), url("/static/fonts/DINNextLTPro-Regular.tff") format("truetype"), url("/static/fonts/DINNextLTPro-Regular.svg#4259aa35ace4c12937b753d1ff841883") format("svg");
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "kaec";
+    src: url("/static/fonts/kaec.eot");
+    src: url("/static/fonts/kaec.eot#iefix") format("embedded-opentype"), url("/static/fonts/kaec.woff") format("woff"), url("/static/fonts/kaec.tff") format("truetype"), url("/static/fonts/kaec.svg#kaec") format("svg");
+    font-style: normal;
+}
+
+$fallback-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-font-family: "DIN Next LT Pro";
+
+$default-font-size: 14px;

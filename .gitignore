@@ -46,3 +46,5 @@ kaec/static/js/*
 kaec/static/imgs/*
 !kaec/static/imgs/.gitkeep
 !kaec/static/imgs/favicon.ico
+kaec/static/fonts/*
+!kaec/static/fonts/.gitkeep

@@ -1,0 +1,17 @@
+@mixin transition($duration) {
+    -webkit-transition: $duration;
+         -o-transition: $duration; 
+            transition: $duration;
+}
+
+@mixin default-transition() {
+    @include transition(0.5s);
+}
+
+@mixin transform($func) {
+    -webkit-transform: $func;
+       -moz-transform: $func;
+        -ms-transform: $func;
+         -o-transform: $func;
+            transform: $func;
+}

@@ -1,11 +1,9 @@
 {% extends 'layout/base.html' %}
 
-{% block page_title %}
-    Index
-{% endblock %}
+{% load staticfiles %}
+
+{% block page_title %}Index{% endblock %}
 
 {% block content %}
-    <h1>Hello from Core Index</h1>
-
     {% include 'core/partials/header.html' %}
 {% endblock %}
