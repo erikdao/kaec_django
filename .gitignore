@@ -36,3 +36,10 @@ secret.properties
 staticfiles/
 
 .cache
+
+# Project development assets
+kaec/media
+kaec/static/css/*
+!kaec/static/css/.gitkeep
+kaec/static/js/*
+!kaec/static/js/.gitkeep
