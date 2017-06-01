@@ -1,0 +1,38 @@
+## OSX
+.DS_Store
+.AppleDouble
+.LSOverride
+
+## Basics
+*.py[cod]
+__pycache__
+
+## Logs
+logs
+*.log
+pip-log.txt
+npm-debug.log*
+
+## SQLite
+*.sqlite3
+
+## Unit tests / coverage reports
+.coverage
+.tox
+nosetests.xml
+htmlcov
+
+## npm
+node_modules/
+
+## bower
+bower_components/
+
+## Virtual environments
+.env
+secret.json
+secret.properties
+
+staticfiles/
+
+.cache

@@ -1,0 +1,1 @@
+# Included so that django startproject comment runs against the docs directory
