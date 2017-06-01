@@ -4,9 +4,7 @@ var webpack = require('webpack');
 
 module.exports = {
     entry: [
-        'webpack-dev-server/client?http://localhost:8000',  // Webpack Dev Server host and port
-        'webpack/hot/only-dev-server',  // "only" to prevent reload on syntax errors
-        './assets/js/src/index.js',
+        './assets/js/src/index.js'
     ],
     output: {
         path: path.resolve(__dirname, './kaec/static/js'),
@@ -22,7 +20,7 @@ module.exports = {
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                loader: ['react-hot-loader', 'babel-loader']
+                loader: ['babel-loader']
             },
             {
                 test: /\.scss$/,

@@ -1,0 +1,120 @@
+/*
+ * Augmented styles for React Slick slider
+ *
+ * ============================================ */
+.hero-slider {
+    position: relative;
+    margin: 0 auto 60px;
+    padding: 0;
+
+    img {
+        max-width: 100%;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .slick-list {
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        position: absolute;
+        z-index: 2;
+        margin: auto;
+        height: 146px;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        .txt-image {
+            text-align: center;
+            margin: 0 auto 40px;
+
+            img {
+                margin: 0 auto 40px;
+            }
+
+            .down {
+                display: block;
+                width: 36px;
+                margin: 0 auto;
+                padding: 5px 5px;
+                height: 38px;
+                
+                &:hover {
+                    background: darken($accent-primary, 5%);
+                }
+                img {
+                    width: auto;
+                }
+            }
+        }
+    }
+
+    .slick-dots {
+        position: absolute;
+        bottom: 21%;
+
+        li {
+            &.slick-active {
+                button {
+                    &:before {
+                        opacity: 1;
+                        color: $accent-warning;
+                    }
+                }
+            }
+
+            button {
+                color: #FFF;
+                &:before {
+                    opacity: 1;
+                    color: #FFF;
+                }
+            }
+        }
+
+    }
+}
+
+@media (min-with: 1367px) {
+    .hero-slider {
+        .container {
+            .txt-image {
+                .down {
+                    margin: 40px auto 0;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .scroll-to {
+        &:hover {
+            &:after {
+                @include transform(scale(1));
+            }
+        }
+
+        img {
+            &:hover {
+                &:after {
+                    content: '';
+                    position: absolute;
+                    right: 0px;
+                    top: 0px;
+                    background: darken($accent-primary, 5%);
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    margin: 0 auto;
+                    @include transform(scale(0));
+                    @include transition(all 0.8s ease-in-out);
+                }
+            }
+        }
+    }
+}
