@@ -36,6 +36,12 @@
 }
 
 section {
+    a {
+        &:hover, &:focus, &:visited, &:active {
+            text-decoration: none;
+        }
+    }
+
     &.moving {
         margin-top: 75px;
         position: relative;
@@ -188,7 +194,254 @@ section {
                 @include moving-boxes-col-link();
             }
         } /* -- .moving-boxes .visit */
-    }
+    } /* -- section.moving */
+
+    &.home-tabs {
+        .nav-pills {
+            display: block;
+            margin-bottom: 65px;
+
+            li {
+                display: inline-block;
+                float: none;
+                position: relative;
+                margin: 0 25px;
+
+                &:before {
+                    content: '';
+                    height: 3px;
+                    width: 100%;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    margin: 0 auto;
+                    @include default-transition();
+                    z-index: -1;
+                }
+
+                &:hover {
+                    a {
+                        color: $white;
+                    }
+
+                    &:before {
+                        height: 100%;
+                    }
+                }
+
+                &.live {
+                    &:before {
+                        background: $accent-primary;
+                    }
+
+                    &.active {
+                        &:after {
+                            border-color: $accent-primary transparent transparent transparent;
+                        }
+                    }
+                }
+
+                &.work {
+                    &:before {
+                        background: $accent-success;
+                    }
+                }
+
+                &.invest {
+                    &:before {
+                        background: $accent-info;
+                    }
+                }
+
+                &.visit {
+                    &:before {
+                        background: $accent-warning;
+                    }
+                }
+
+                &.active {
+                    &:after {
+                        content: '';
+                        width: 0;
+                        height: 0;
+                        border-style: solid;
+                        border-width: 9px 9px 0 9px;
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        margin: 0 auto;
+                    }
+                }
+
+                a {
+                    background: none;
+                    color: $grey;
+                    font-size: 32px;
+                    text-transform: uppercase;
+                    padding: 0 3px;
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+            }
+        } /* -- section.home-tabs .nav-pills */
+
+        .tab-content {
+            .tab-pane {
+                h1 {
+                    margin-bottom: 40px;
+                }
+
+                h3 {
+                    margin: 0 0 70px;
+                }
+
+                .live-boxes {
+
+                    [class^="col-"] {
+                        padding: 0;
+                        border-right: 1px solid $white;
+                        border-bottom: 1px solid $white;
+                        overflow: hidden;
+                        position: relative;
+                        display: inline-block;
+
+                        .txt {
+                            color: $white;
+                            width: 100%;
+                            position: absolute;
+                            bottom: 0;
+                            text-transform: uppercase;
+                            z-index: 2;
+
+                            .btn {
+                                margin-bottom: 20px;
+                                padding: 8px 12px;
+                                font-size: 15px;
+                                line-height: 14px;
+                            }
+                        }
+
+                        &:before {
+                            content: '';
+                            background: -webkit-linear-gradient(top, rgba(72, 76, 97, 0) 0%, rgba(93, 169, 30, 0.8) 75%);
+                            background: linear-gradient(to bottom, rgba(72, 76, 97, 0) 0%, rgba(93, 169, 30, 0.8) 75%);
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            width: 100%;
+                            height: 100%;
+                            z-index: 1;
+                            @include transition(1s);
+                            opacity: 0;
+                            @include transform(translate(0, 100%));
+                        }
+                        
+                        &.live {
+                            .btn {
+                                font-size: 20px;
+                                border: 2px solid $white;
+                                padding: 6px 30px 0;
+                                line-height: 35px;
+                                margin-bottom: 25px;
+                                @include transition(0.5s);
+                                @include transform(translate(0, 0));
+                                @include transform(scale(1));
+                            }
+                        }
+
+                        &.sm-box {
+                            .txt {
+                                padding-left: 28px;
+
+                                h4 {
+                                    font-size: 26px;
+                                }
+                            }
+
+                            .pointer {
+                                width: 0;
+                                height: 0;
+                                border-style: solid;
+                                border-width: 0 17px 17px 17px;
+                                border-color: transparent transparent $white transparent;
+                                position: absolute;
+                                left: 0;
+                                right: 0;
+                                bottom: 0;
+                                margin: 0 auto;
+                            }
+
+                            &.txt-block {
+                                .black {
+                                    padding: 30px 0 0 30px;
+
+                                    p {
+                                        margin: 0 0 35px;
+                                        font-size: 24px;
+                                        line-height: 28px;
+                                        color: $grey;
+                                    }
+
+                                    .text-primary {
+                                        font-size: 16px;
+                                        text-transform: uppercase;
+                                        line-height: 18px;
+                                        color: $accent-primary;
+                                        margin: 0;
+                                    }
+                                }
+                            }
+                        }
+
+                        img {
+                            @include transition(2s);
+                            @include transform(scale(1));
+                        }
+
+                    }
+                }
+
+                .box-grid-container {
+                    display: grid;
+                    grid-template-columns: 50% 25% auto;
+                    grid-template-rows: 1fr 1fr;
+
+                    [class*="box-"] {
+                        position: relative;
+                        display: inline-block;
+                    }
+
+                    .box-1 {
+                        grid-column: 1 / 1;
+                        grid-row: 1 / span 2;
+                    }
+
+                    .box-2 {
+                        grid-column: 2 / 2;
+                        grid-row: 1 / 1;
+                    }
+
+                    .box-3 {
+                        grid-column: 3 / 3;
+                        grid-row: 1 / 1;
+                    }
+
+                    .box-4 {
+                        grid-column: 2 / 2;
+                        grid-row: 2 / 2;
+                    }
+
+                    .box-5 {
+                        grid-column: 3 / 3;
+                        grid-row: 2 / 2;
+                    }
+                }
+            }
+        }
+    } /* -- section.home-tabs */
 }
 
 @media (min-width: 1200px) {
@@ -228,6 +481,58 @@ section {
                 &:hover {
                     h2 {
                         @include transform(scale(1.1) translate(0px, -90px));
+                    }
+                }
+            }
+        }
+
+        &.home-tabs {
+            .tab-content {
+                .tab-pane {
+                    .live-boxes {
+                        [class^="col-"] {
+                            &:before {
+                                opacity: 0;
+                                @include transform(translate(0, 0%));
+                            }
+
+                            &:hover {
+                                &:before {
+                                    opacity: 1;
+                                    @include transform(translate(0, 0%));
+                                }
+
+                                img {
+                                    @include transform(scale(1.05));
+                                }
+                            }
+
+                            &.live {
+                                .txt {
+                                    padding-left: 45px;
+                                }
+
+                                p {
+                                    margin: 0;
+                                    font-size: 50px;
+                                    @include default-transition();
+                                    @include transform(translate(0, 0));
+                                    @include transform(scale(1));
+                                }
+
+                                &:hover {
+                                    .btn {
+                                        background: $accent-primary;
+                                    }
+                                }
+                            }
+
+                            .image {
+                                display: block;
+                                width: 291px;
+                                overflow: hidden;
+                            }
+                        }
                     }
                 }
             }

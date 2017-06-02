@@ -1,0 +1,17 @@
+{
+  "name": "kaec_project",
+  "description": "A clone version of KAEC made in Django and React",
+  "main": "index.js",
+  "authors": [
+    "Erik Dao <erikddao@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
