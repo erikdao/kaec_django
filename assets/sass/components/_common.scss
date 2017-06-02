@@ -60,7 +60,7 @@
  }
 
 /* Down pointer arrows */
-.donw-pointer {
+.down-pointer {
     font-size: 26px;
     color: $grey;
     padding: 4px 5px;
@@ -126,7 +126,7 @@
         }
      }
 
-     .donw-pointer {
+     .down-pointer {
          &.scroll-to {
             font-size: 26px;
             color: $grey;
@@ -170,3 +170,19 @@
          }
      }
  }
+
+ /* Imaage hover effect elements */ 
+ @media (min-width: 1200px) {
+     .img-hover-effect {
+         &:before {
+             @include image-hover-before();
+         }
+     }
+ }
+
+//  Form 
+.form-wrapper {
+    position: relative;
+    width: 100%;
+    float: left;
+}

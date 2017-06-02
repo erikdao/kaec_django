@@ -30,6 +30,18 @@
     }
 }
 
+.btn-primary {
+    color: $white;
+    background-color: $accent-primary;
+    border-color: $accent-primary;
+
+    &:hover {
+        color: $white;
+        background-color: darken($accent-primary, 8%);
+        border-color: darken($accent-primary, 9%);
+    }
+}
+
 .btn-white-hollow {
     color: $white;
     background-color: transparent;
@@ -37,5 +49,41 @@
 
     &:hover {
         color: $white;
+    }
+}
+
+@media (min-width: 1200px) {
+    .btn-hover-effect-white {
+        position: relative;
+        overflow: hidden;
+        @include transition(0.5s);
+
+        &:after {
+            content: '';
+            width: 0;
+            height: 0;
+            @include transform(rotate(360deg));
+            border-style: solid;
+            border-width: 0 0 0;
+            border-color: $white transparent transparent transparent;
+            position: absolute;
+            top: 0;
+            left: 0;
+            @include transition(0.8s);
+        }
+
+        &:hover {
+            color: $accent-primary;
+            background-color: $white;
+
+            &:after {
+                border-width: 330px 330px 0 0;
+            }
+        }
+
+        span {
+            z-index: 2;
+            position: relative;
+        }
     }
 }
