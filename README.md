@@ -4,10 +4,10 @@ This project aims to build a clone version of [KAEC Website](http://www.kaec.net
 
 Some screenshots of the current verion are shown below:
 
-![Screenshot 1](/assets/images/sc1.png)
+![Screenshot 1](/assets/images/sc1.png "The Image Slider is created using React")
 ![Screenshot 1](/assets/images/sc2.png)
-![Screenshot 1](/assets/images/sc3.png)
-![Screenshot 1](/assets/images/sc4.png)
+![Screenshot 1](/assets/images/sc3.png "The images are arranged using CSS Grid Layout")
+![Screenshot 1](/assets/images/sc4.png "The green shade appeared on image hover is created by manipulating :before and :after pseudoelement in CSS3")
 ---
 ## Backend
 
