@@ -2,6 +2,12 @@
 
 This project aims to build a clone version of [KAEC Website](http://www.kaec.net/). This is only for educational purpose as I'm so interested in the design and aethestics of the website. No copyright infringment intended.
 
+Some screenshots of the current verion are shown below:
+
+![Screenshot 1](/assets/images/sc1.png)
+![Screenshot 1](/assets/images/sc2.png)
+![Screenshot 1](/assets/images/sc3.png)
+![Screenshot 1](/assets/images/sc4.png)
 ---
 ## Backend
 
